@@ -43,10 +43,25 @@ const diaryEntries = [
 export default function DiaryListScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <Text style={styles.header}>Buku Harian</Text>
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>Buku Harian</Text>
+        <Image 
+          source={require('../../assets/avatar.jpg')}
+          style={styles.avatar} 
+        />
+      </View>
+
       {diaryEntries.map((entry) => (
-        <DiaryCard key={entry.id} title={entry.title} date={entry.date} preview={entry.preview} moodUri={entry.moodUri}/>
+        <DiaryCard 
+          key={entry.id} 
+          title={entry.title} 
+          date={entry.date} 
+          preview={entry.preview} 
+          moodUri={entry.moodUri}
+          mood={entry.mood}
+        />
       ))}
+
     </ScrollView>
   );
 }
@@ -59,9 +74,23 @@ const styles = StyleSheet.create({
   content: {
     padding: 16,
   },
+  // Style baru untuk mengatur layout Header
+  headerContainer: {
+    flexDirection: 'row', // Membuat Teks dan Avatar sejajar kiri-kanan
+    justifyContent: 'space-between', // Memberi jarak maksimal di antara keduanya
+    alignItems: 'center', // Agar posisinya sejajar secara vertikal
+    marginBottom: 20,
+  },
   header: {
     fontSize: 24,
     fontWeight: '700',
-    marginBottom: 12,
+  },
+  // Style untuk Avatar
+  avatar: {
+    width: 45,
+    height: 45,
+    borderRadius: 25, // Membuatnya bulat (setengah dari width/height)
+    borderWidth: 2,
+    borderColor: '#e0e0e0',
   },
 });
