@@ -24,6 +24,20 @@ const diaryEntries = [
     preview: 'Menikmati senja sambil membaca buku favorit. Warna langit sangat indah...',
     moodUri: 'https://picsum.photos/seed/calm/80',
   },
+  {
+    id: 4,
+    title: 'Menonton Anime Kesukaan',
+    date: '2026-10-04',
+    preview: 'Menonton ulang anime favorit one piece...',
+    moodUri: Image.resolveAssetSource(require('../../assets/one-piece.jpg')).uri,
+  },
+  {
+    id: 5,
+    title: 'Bermain game',
+    date: '2026-10-07',
+    preview: 'Bermain game bersama teman...',
+    moodUri: Image.resolveAssetSource(require('../../assets/nintendo.jpg')).uri,
+  },
 ];
 
 export default function DiaryListScreen() {
