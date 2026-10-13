@@ -1,79 +1,53 @@
 # 📔 Diary App
 
-Aplikasi mobile untuk mencatat dan melihat kembali momen-momen berharga dalam bentuk buku harian digital.
+Aplikasi *mobile* untuk mencatat dan melihat kembali momen-momen berharga dalam bentuk buku harian digital, dibangun menggunakan React Native dan Expo CLI[cite: 1]. 
 
 ## 👤 Informasi Mahasiswa
 
-Proyek ini dibuat sebagai bagian dari tugas perkuliahan:
-- **Nama** : Naufal Alexander
-- **NIM** : 2430511010
-- **Mata Kuliah** : Pemrograman Mobile Multiplatform
-- **Semester** : 5
+*   **Nama**: Naufal Alexander
+*   **NIM**: 2430511010
+*   **Mata Kuliah**: Pemrograman Mobile Multiplatform
+*   **Studi Kasus**: Diary App - Responsive Layout Flexbox & Stylesheet
 
-## 📱 Bukti Berjalan di Perangkat
+## 📱 Bukti Tampilan Aplikasi
+Versi sebelumnya:
+![Screenshot Versi Lama](./assets/screenshot.jpeg)
 
-![Screenshot Aplikasi di HP](./assets/screenshot.jpeg)
+Aplikasi telah diperbarui untuk mendukung *layout* responsif:
 
-## 🎯 Tentang Aplikasi
+**Tampilan Ponsel (1 Kolom)**
+![Screenshot Mobile](./assets/screenshot3.jpeg)
 
-**Diary App** adalah aplikasi mobile yang memungkinkan pengguna untuk membaca dan mengelola catatan harian mereka. Setiap entry dilengkapi dengan mood indicator, judul, tanggal, dan preview teks untuk pengalaman pengguna yang intuitif.
+**Tampilan Tablet/Web (2 Kolom)**
+![Screenshot Web](./assets/screenshot2.png)
 
-Aplikasi ini dibangun menggunakan **React Native** dan **Expo**, memastikan kompatibilitas lintas platform (iOS, Android, dan Web).
+## ✨ Fitur yang Diselesaikan
 
-## 🎨 Tema Aplikasi & UI
+### Versi Sebelumnya (Praktikum Pertemuan 2)
+*   Membuat struktur proyek *mobile* berbasis React Native dan Expo.
+*   Menggunakan komponen antarmuka statis dasar (`View`, `Text`, `Image`) dan `StyleSheet`[cite: 2].
+*   Mengonfigurasi penanganan *safe area* menggunakan `react-native-safe-area-context`[cite: 2].
 
-- **Color Scheme**: Light theme dengan warna netral.
-- **Komponen Utama**: Card-based layout dengan *border* dinamis menyesuaikan mood (Senang, Fokus, Tenang, Semangat, Santai).
-- **Header**: Teks "Buku Harian" dilengkapi dengan Avatar Pengguna.
-- **Card Entry**: Menampilkan Mood Image (64x64px circular), Judul, Tanggal, dan Preview Catatan (maksimal 3 baris).
+### Pembaruan Saat Ini (Praktikum Pertemuan 3)
+*   **Flexbox**: Menerapkan Flexbox untuk mengatur arah, *alignment*, spasi, dan ukuran elemen pada antarmuka[cite: 2].
+*   **Design Tokens**: Menyusun *StyleSheet* yang rapi dan terpusat dengan *design tokens* untuk warna, spasi, radius, tipografi, dan *breakpoint*[cite: 2, 5].
+*   **Layout Responsif**: Membuat tata letak yang beradaptasi otomatis menjadi daftar 1 kolom pada ponsel dan 2 kolom pada lebar layar >= 600 piksel menggunakan komponen `useWindowDimensions`[cite: 2, 3, 16].
+*   **FlatList**: Menggunakan komponen `FlatList` untuk menampilkan data entri secara efisien[cite: 2].
+*   **Reusable Component**: Mengoptimalkan komponen `DiaryCard` yang interaktif menggunakan `Pressable` agar dapat beroperasi pada mode *list* maupun *grid*[cite: 2, 3].
+*   **Modal Detail**: Mengintegrasikan `DiaryDetailModal` untuk menampilkan isi lengkap catatan dan *hero image* tanpa berpindah layar ketika `DiaryCard` ditekan[cite: 2, 3].
+*   **Aksesibilitas**: Mengimplementasikan prinsip aksesibilitas dasar melalui penggunaan `accessibilityLabel`, target sentuh yang memadai, dan tingkat kontras[cite: 2, 16].
+*   **Dynamic Mood Border (Tantangan)**: Menerapkan gaya *border* dengan warna yang berbeda menyesuaikan setiap tipe *mood* (suasana hati) pengguna[cite: 16].
 
-## 🏗️ Struktur Proyek
+## 🚀 Cara Menjalankan Project
 
-```text
-diary-app/
-├── App.js                          # Root component
-├── src/
-│   ├── screens/
-│   │   └── DiaryListScreen.js      # Main screen - menampilkan list diary & avatar
-│   └── components/
-│       └── DiaryCard.js            # Reusable card component untuk setiap entry
-├── assets/                         # Asset gambar lokal (Avatar, Mood, dll)
-├── app.json                        # Expo configuration
-├── package.json                    # Dependencies
-└── README.md                       # Dokumentasi
-```
-
-## 🛠️ Tech Stack
-
-| Technology | Fungsi |
-|-----------|--------|
-| **React Native** | Cross-platform mobile framework |
-| **Expo** | Development & deployment platform |
-| **expo-status-bar** | Status bar management |
-| **react-native-safe-area-context** | Safe area handling |
-
-## 🚀 Cara Menjalankan
-
-### Prerequisites
-Pastikan Anda sudah menginstal Node.js dan Expo CLI.
-
-### Development
-
-```bash
-# Install dependencies
-npm install
-
-# Jalankan di development server
-npx expo start
-
-# Tekan 'a' untuk membuka di Android emulator/device
-# Tekan 'i' untuk membuka di iOS simulator
-```
-
-## 🎯 Pengembangan Selanjutnya
-
-Fitur yang dapat ditambahkan di masa mendatang:
-- [ ] Tambah entry baru (form & validation)
-- [ ] Edit & delete entry
-- [ ] Local storage/database (AsyncStorage atau SQLite)
-- [ ] Dark mode support
+1.  Buka terminal dan pastikan Anda berada di direktori proyek `diary-app`.
+2.  Unduh seluruh dependensi proyek:
+    ```bash
+    npm install
+    ```
+3.  Jalankan server *development*:
+    ```bash
+    npx expo start
+    ```
+    *(Tunggu hingga muncul kode QR di terminal)*[cite: 5].
+4.  Gunakan **Expo Go** di ponsel Anda untuk memindai kode QR, atau tekan tombol `a` di terminal untuk menjalankan aplikasi pada Android Emulator[cite: 5, 14].
