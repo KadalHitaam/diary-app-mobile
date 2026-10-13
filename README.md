@@ -11,14 +11,15 @@ Aplikasi *mobile* untuk mencatat dan melihat kembali momen-momen berharga dalam 
 
 ## 📱 Bukti Tampilan Aplikasi
 Versi sebelumnya:
+
+
 ![Screenshot Versi Lama](./assets/screenshot.jpeg)
 
 Aplikasi telah diperbarui untuk mendukung *layout* responsif:
 
-**Tampilan Ponsel (1 Kolom)**
+
 ![Screenshot Mobile](./assets/screenshot3.jpeg)
 
-**Tampilan Tablet/Web (2 Kolom)**
 ![Screenshot Web](./assets/screenshot2.png)
 
 ## ✨ Fitur yang Diselesaikan
